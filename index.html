@@ -3,26 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yahia Ashraf</title>
+    <title>Yahia Ashraf | Software Engineer</title>
+    
+    <!-- Premium Sans-Serif Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --bg-color: #050505;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --text-tertiary: #444444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            background-color: #000;
-            color: #fff;
-            font-family: sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            flex-direction: column;
-            gap: 10px;
+            overflow: hidden;
+            background-image: radial-gradient(circle at center, #151515 0%, #050505 100%);
         }
-        h1 { font-size: 2rem; font-weight: 300; letter-spacing: 2px; }
-        p { color: #888; font-size: 1rem; letter-spacing: 4px; text-transform: uppercase; }
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .name {
+            font-size: 4rem;
+            font-weight: 600;
+            letter-spacing: -0.04em;
+            color: var(--text-primary);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+        }
+
+        .soon-wrapper {
+            margin-top: 4rem;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
+        }
+
+        .soon {
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            animation: pulse 2.5s ease-in-out infinite alternate;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.3;
+                text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+            }
+            100% {
+                opacity: 1;
+                text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.8rem;
+            }
+            .title {
+                font-size: 0.85rem;
+                letter-spacing: 0.2em;
+            }
+            .soon-wrapper {
+                margin-top: 3rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Yahia Ashraf</h1>
-    <p>Software Engineer | Soon</p>
+    <div class="container">
+        <h1 class="name">Yahia Ashraf</h1>
+        <h2 class="title">Software Engineer</h2>
+        <div class="soon-wrapper">
+            <p class="soon">Soon.</p>
+        </div>
+    </div>
 </body>
 </html>
